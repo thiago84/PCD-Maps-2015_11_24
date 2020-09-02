@@ -1,0 +1,17 @@
+
+<div class="row">
+    <h2 class="header">Classificações</h2>
+    
+    <ul class="collection">
+        <li class="collection-item" ng-repeat="classificacao in classificacoes">
+            <a ng-click="excluir()" class="secondary-content"><i class="mdi-action-delete"></i></a>
+            <a ng-href="#/painel/classificacao/{{classificacao.id}}">{{classificacao.nome}}</a>
+        </li>
+    </ul>
+    
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red" href="#/painel/classificacao">
+            <i class="large mdi-content-add"></i>
+        </a>
+    </div>
+</div>

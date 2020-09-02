@@ -1,0 +1,11 @@
+
+<div class="row">
+    <h2 class="header">Usuários</h2>
+    
+    <ul class="collection">
+        <li class="collection-item" ng-repeat="usuario in usuarios">
+            <a ng-click="excluir()" class="secondary-content"><i class="mdi-action-delete"></i></a>
+            <a ng-href="#/painel/usuario/{{usuario.id}}">{{usuario.nome}}</a>
+        </li>
+    </ul>
+</div>

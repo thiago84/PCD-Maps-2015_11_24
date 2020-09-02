@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<skipper version="3.2.4.1256" mvc="Without MVC" orm="Doctrine2" name="maps" uuid="a6b593df-8897-4fe0-8627-03e74565604b">
+  <module name="\Module" local-name="Module" namespace="\" export-format="Doctrine2Php" export-path="." uuid="214816f4-e52d-4140-8773-49ad39990af3">
+    <region namespace="\App\Entity" local-namespace="App\Entity" uuid="d30f2a16-33c0-44fd-9771-6b5b2e9b41e9">
+      <entity name="\App\Entity\Arquivo" local-name="Arquivo" namespace="\App\Entity" uuid="d5007820-4425-4913-b777-78abccd593e6">
+        <field name="id" type="integer" required="true" primary="true" uuid="8b9552d5-dac3-455d-861d-d5f042583e6f">
+          <orm-attributes>
+            <attribute name="generator">
+              <attribute name="strategy">AUTO</attribute>
+            </attribute>
+          </orm-attributes>
+        </field>
+        <field name="nome" type="string" uuid="3e3f12ea-4536-4c0c-816f-d20e351c8477"/>
+        <field name="url" type="string" uuid="3fbeaf43-052a-42e8-889a-ac0d525b1df8"/>
+        <inheritance-child derived-from="\App\Entity\Entity" uuid="8b88139d-f0bd-4e51-899c-b30e71c41f5f"/>
+        <orm-attributes>
+          <attribute name="export-file-name">Arquivo.php</attribute>
+          <attribute name="lifecycle-callbacks">
+            <attribute name="lifecycle-callback">
+              <attribute name="type">prePersist</attribute>
+              <attribute name="method">salvarArquivo</attribute>
+            </attribute>
+            <attribute name="lifecycle-callback">
+              <attribute name="type">preUpdate</attribute>
+              <attribute name="method">salvarArquivo</attribute>
+            </attribute>
+            <attribute name="lifecycle-callback">
+              <attribute name="type">postRemove</attribute>
+              <attribute name="method">removerArquivo</attribute>
+            </attribute>
+          </attribute>
+        </orm-attributes>
+      </entity>
+      <entity name="\App\Entity\Classificacao" local-name="Classificacao" namespace="\App\Entity" uuid="b5c74037-72f6-43e3-a0ee-9e67e88b82dd">
+        <field name="id" type="integer" required="true" primary="true" uuid="9abbfdcd-3a30-41bf-a4ed-9c456af374f1">
+          <orm-attributes>
+            <attribute name="generator">
+              <attribute name="strategy">AUTO</attribute>
+            </attribute>
+          </orm-attributes>
+        </field>
+        <field name="nome" type="string" uuid="efa01c78-743b-41f2-84a5-bea117c4d70d"/>
+        <field name="cor" type="string" uuid="6c30def2-25fc-4bc0-9314-a1724eabe734"/>
+        <inheritance-child derived-from="\App\Entity\Entity" uuid="2c2a74e1-ed24-467c-98f4-4fa6fdbadc17"/>
+        <orm-attributes>
+          <attribute name="export-file-name">Classificacao.php</attribute>
+        </orm-attributes>
+      </entity>
+      <entity name="\App\Entity\Contato" local-name="Contato" namespace="\App\Entity" uuid="997f36b9-5266-4dc5-aa44-22c8e5851621">
+        <field name="id" type="integer" required="true" primary="true" uuid="1b67a6d8-c2ee-4a16-a294-8056e953ef19">
+          <orm-attributes>
+            <attribute name="generator">
+              <attribute name="strategy">AUTO</attribute>
+            </attribute>
+          </orm-attributes>
+        </field>
+        <field name="nome" type="string" uuid="6e6509fe-201e-4b4c-bfcc-7c00f7c9bcab"/>
+        <field name="telefone" type="string" uuid="a18b5def-0684-4c9c-ae90-6fb92be3dbdf"/>
+        <inheritance-child derived-from="\App\Entity\Entity" uuid="af56a46e-94c7-43c4-99e9-bca4a7e8c62e"/>
+        <orm-attributes>
+          <attribute name="export-file-name">Contato.php</attribute>
+        </orm-attributes>
+      </entity>
+      <entity name="\App\Entity\Denuncia" local-name="Denuncia" namespace="\App\Entity" uuid="dfe30a4c-1f7a-4c72-9140-84fe11a28c24">
+        <field name="id" type="integer" required="true" primary="true" uuid="12a997f5-9d15-45ad-9442-6343316ff434">
+          <orm-attributes>
+            <attribute name="generator">
+              <attribute name="strategy">AUTO</attribute>
+            </attribute>
+          </orm-attributes>
+        </field>
+        <field name="titulo" type="string" uuid="520649b6-3a56-4ee7-899e-05a4538bf47b"/>
+        <field name="localizacao" type="string" uuid="42b5abb8-52e3-4bed-bc31-3ac39b177119"/>
+        <field name="bairro" type="string" uuid="f286a192-f66d-41f6-bd62-8fd28d7aaf3b"/>
+        <field name="latitude" type="float" uuid="1b724d78-4c2a-4b1f-a6f8-121a9c7478f8"/>
+        <field name="longitude" type="float" uuid="bbbee5ae-8dba-468d-9513-96a3e922a557"/>
+        <field name="descricao" type="string" uuid="5b2048a7-5ec2-4550-bd29-57dfb01bb3ee"/>
+        <field name="classificacao_id" uuid="cd57c0e0-3ceb-450b-9d62-8c275f7a5c4b"/>
+        <field name="usuario_id" uuid="33a325c1-1963-4f99-b40b-243879d43537"/>
+        <field name="arquivo_id" uuid="d5602b5e-4131-46ae-b6a5-456dfbf1a7ea"/>
+        <inheritance-child derived-from="\App\Entity\Entity" uuid="85f718e7-19b5-4ce1-8e8b-73126d4ae508"/>
+        <orm-attributes>
+          <attribute name="export-file-name">Denuncia.php</attribute>
+        </orm-attributes>
+      </entity>
+      <entity name="\App\Entity\Usuario" local-name="Usuario" namespace="\App\Entity" uuid="241dc960-5a16-46a5-a0c7-ca967d910cf3">
+        <field name="id" type="integer" required="true" primary="true" uuid="fda43cae-7ffe-494e-99f2-674e57c1e3fd">
+          <orm-attributes>
+            <attribute name="generator">
+              <attribute name="strategy">AUTO</attribute>
+            </attribute>
+          </orm-attributes>
+        </field>
+        <field name="nome" type="string" uuid="2ce1b6bf-a61e-4b58-912d-99ed1eac6417"/>
+        <field name="email" type="string" unique="true" uuid="711f5649-23bf-4a59-b135-59e6973e9950"/>
+        <field name="senha" type="string" uuid="b64fcba9-05a9-43fb-be08-6ba640b89af9"/>
+        <field name="facebook" type="string" uuid="cec71da5-1fa1-49ec-859b-1a41d5b9747a"/>
+        <inheritance-child derived-from="\App\Entity\Entity" uuid="72faec17-7e98-4bbc-bdfd-cb8502645a3a"/>
+        <orm-attributes>
+          <attribute name="export-file-name">Usuario.php</attribute>
+        </orm-attributes>
+      </entity>
+      <entity name="\App\Entity\Entity" local-name="Entity" namespace="\App\Entity" uuid="50fe5eea-77ac-4b6c-a546-ec0e38720989">
+        <field name="createdAt" type="datetime" uuid="146a29a7-1eec-4253-a58a-aa206040fcfa">
+          <orm-attributes>
+            <attribute name="column">created_at</attribute>
+          </orm-attributes>
+        </field>
+        <field name="updatedAt" type="datetime" uuid="183b6eb1-5351-4eda-8d16-f5dea9c60352">
+          <orm-attributes>
+            <attribute name="column">updated_at</attribute>
+          </orm-attributes>
+        </field>
+        <inheritance-parent type="MAPPED_SUPERCLASS" uuid="ece501d3-5c33-410b-a9d5-73a037a30141"/>
+        <orm-attributes>
+          <attribute name="export-file-name">Entity.php</attribute>
+          <attribute name="lifecycle-callbacks">
+            <attribute name="lifecycle-callback">
+              <attribute name="type">prePersist</attribute>
+              <attribute name="method">prePersist</attribute>
+            </attribute>
+            <attribute name="lifecycle-callback">
+              <attribute name="type">preUpdate</attribute>
+              <attribute name="method">preUpdate</attribute>
+            </attribute>
+          </attribute>
+        </orm-attributes>
+      </entity>
+    </region>
+    <association from="\App\Entity\Denuncia" to="\App\Entity\Classificacao" owner-alias="" inverse-alias="classificacao" many-owner="true" many-inverse="false" uuid="95592fcf-4922-4ef3-a5e2-48ae3a128604">
+      <association-field from="classificacao_id" to="id"/>
+      <orm-attributes>
+        <attribute name="side-owning"/>
+        <attribute name="side-inverse"/>
+      </orm-attributes>
+    </association>
+    <association from="\App\Entity\Denuncia" to="\App\Entity\Usuario" owner-alias="" inverse-alias="usuario" many-owner="true" many-inverse="false" uuid="0b081690-4f7e-4d63-bfcd-3f885ca96503">
+      <association-field from="usuario_id" to="id"/>
+      <orm-attributes>
+        <attribute name="side-owning"/>
+        <attribute name="side-inverse"/>
+      </orm-attributes>
+    </association>
+    <association from="\App\Entity\Denuncia" to="\App\Entity\Arquivo" owner-alias="" inverse-alias="imagem" many-owner="true" many-inverse="false" uuid="934c4356-3094-4d6d-8a46-f8de22fdc22a">
+      <association-field from="arquivo_id" to="id"/>
+      <orm-attributes>
+        <attribute name="side-owning">
+          <attribute name="cascade">
+            <attribute name="cascade-all">true</attribute>
+          </attribute>
+        </attribute>
+        <attribute name="side-inverse"/>
+      </orm-attributes>
+    </association>
+    <region namespace="\Doctrine\ORM\Mapping" local-namespace="Doctrine\ORM\Mapping" uuid="89c794f6-c7c8-43ed-81ce-ead7f2e8703a"/>
+  </module>
+  <visual-data>
+    <association uuid="0b081690-4f7e-4d63-bfcd-3f885ca96503" color="#CDC32B"/>
+    <association uuid="934c4356-3094-4d6d-8a46-f8de22fdc22a" color="#F4931F"/>
+    <association uuid="95592fcf-4922-4ef3-a5e2-48ae3a128604" color="#61D351"/>
+    <entity uuid="241dc960-5a16-46a5-a0c7-ca967d910cf3" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="309" position-y="270" size-x="0" size-x2="96" size-y="0" size-y2="87"/>
+    <entity uuid="50fe5eea-77ac-4b6c-a546-ec0e38720989" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="165" position-y="163" size-x="0" size-x2="112" size-y="0" size-y2="45"/>
+    <entity uuid="997f36b9-5266-4dc5-aa44-22c8e5851621" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="327" position-y="156" size-x="0" size-x2="91" size-y="0" size-y2="59"/>
+    <entity uuid="b5c74037-72f6-43e3-a0ee-9e67e88b82dd" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="149" position-y="344" size-x="0" size-x2="80" size-y="0" size-y2="59"/>
+    <entity uuid="d5007820-4425-4913-b777-78abccd593e6" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="181" position-y="40" size-x="0" size-x2="80" size-y="0" size-y2="59"/>
+    <entity uuid="dfe30a4c-1f7a-4c72-9140-84fe11a28c24" bg-color="#FFFFFF" hdr-color="#D2D2D2" position-x="25" position-y="147" size-x="0" size-x2="102" size-y="0" size-y2="157"/>
+    <inheritance-child uuid="2c2a74e1-ed24-467c-98f4-4fa6fdbadc17" color="#C774AF"/>
+    <inheritance-child uuid="72faec17-7e98-4bbc-bdfd-cb8502645a3a" center-position-x="0" center-position-y="0" color="#00B4D0"/>
+    <inheritance-child uuid="85f718e7-19b5-4ce1-8e8b-73126d4ae508" center-position-x="0" center-position-y="0" color="#2E63AF"/>
+    <inheritance-child uuid="8b88139d-f0bd-4e51-899c-b30e71c41f5f" color="#B31F24"/>
+    <inheritance-child uuid="af56a46e-94c7-43c4-99e9-bca4a7e8c62e" center-position-x="0" center-position-y="0" color="#8A54A2"/>
+    <module uuid="214816f4-e52d-4140-8773-49ad39990af3" bg-color="#E7F3E7" position-x="50" position-y="50" size-x="0" size-x2="725" size-y="0" size-y2="1048"/>
+    <project uuid="a6b593df-8897-4fe0-8627-03e74565604b" size-x="0" size-x2="825" size-y="0" size-y2="1148"/>
+    <region uuid="89c794f6-c7c8-43ed-81ce-ead7f2e8703a" bg-color="#FEEFE3" position-x="257" position-y="548" size-x="0" size-x2="152" size-y="0" size-y2="105"/>
+    <region uuid="d30f2a16-33c0-44fd-9771-6b5b2e9b41e9" bg-color="#FEFCE8" position-x="50" position-y="70" size-x="0" size-x2="626" size-y="0" size-y2="703"/>
+  </visual-data>
+</skipper>

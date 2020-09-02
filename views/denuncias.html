@@ -1,0 +1,23 @@
+
+<div class="row">
+    <h2 class="header">Denúncias</h2>
+
+    <ul class="collection">
+        <li class="collection-item avatar" ng-repeat="denuncia in denuncias">
+            <span>
+                <img ng-src="{{denuncia.imagem.url}}" class="circle materialboxed" style="border-radius: 0" />
+            </span>
+            <p class="title truncate">
+                <a href="#/painel/denuncia/{{denuncia.id}}">{{denuncia.titulo}}</a>
+            </p>
+            <p class="truncate">{{denuncia.localizacao}}</p>
+            <p class="truncate">{{denuncia.descricao}}</p>
+        </li>
+    </ul>
+    
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red" href="#/painel/denuncia">
+            <i class="large mdi-content-add"></i>
+        </a>
+    </div>
+</div>

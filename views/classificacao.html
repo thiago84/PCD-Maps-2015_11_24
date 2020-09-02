@@ -1,0 +1,24 @@
+
+<div class="row">
+    <h2 class="header" ng-hide="classificacao.id">Nova classificação</h2>
+    <h2 class="header" ng-show="classificacao.id">Editar classificação</h2>
+</div>
+
+<div class="row">
+    <form class="col s12" ng-submit="salvar()" name="formClassificacao">
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="descricao" type="text" required ng-model="classificacao.nome" />
+                <label for="descricao">Descrição</label>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="cor" type="color" ng-model="classificacao.cor" />
+            </div>
+        </div>
+        
+        <button class="btn-large waves-effect waves-light col s12 m3 l3" type="submit">Registrar</button>
+    </form>
+</div>

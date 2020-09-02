@@ -1,0 +1,39 @@
+
+<div class="row">
+    <h2 class="header" ng-hide="contato.id">Novo contato</h2>
+    <h2 class="header" ng-show="contato.id">Editar contato</h2>
+</div>
+
+<div class="row">
+    <form class="col s12" ng-submit="salvar()" name="formContato">
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="nome" type="text" required ng-model="contato.nome" />
+                <label for="nome">Nome</label>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="telefone" type="tel" required ng-model="contato.telefone" pattern="([0-9]{4}-[0-9]{3}-[0-9]{4}|\([0-9]{2}\)[0-9]{4,5}-[0-9]{4})" placeholder="(00)0000-0000" />
+                <label for="telefone">Telefone (xx)xxxx-xxxx / xxxx-xxx-xxxx</label>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="email" type="email" ng-model="contato.email" />
+                <label for="email">E-mail</label>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="site" type="url" ng-model="contato.site" />
+                <label for="site">Site</label>
+            </div>
+        </div>
+        
+        <button class="btn-large waves-effect waves-light col s12 m3 l3" type="submit">Registrar</button>
+    </form>
+</div>

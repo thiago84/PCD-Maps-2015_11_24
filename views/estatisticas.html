@@ -1,0 +1,20 @@
+
+<div class="row">
+    <h2 class="header">Estatísticas</h2>
+    <ul class="collection">
+        <li class="collection-item">
+            Número de usuários<span class="badge">{{estatisticas.usuarios}}</span>
+        </li>
+        <li class="collection-item">
+            Quantidade de denúncias<span class="badge">{{estatisticas.denuncias}}</span>
+        </li>
+        <li class="collection-header"><h5 style="text-indent: 1rem">Tipo de problema</h5></li>
+        <li class="collection-item" ng-repeat="item in estatisticas.classificacao">
+            {{item.nome}}<span class="badge">{{item.total}}</span>
+        </li>
+        <li class="collection-header"><h5 style="text-indent: 1rem">Localidade</h5></li>
+        <li class="collection-item" ng-repeat="item in estatisticas.localidade">
+            {{item.nome}}<span class="badge">{{item.total}}</span>
+        </li>
+    </ul>
+</div>

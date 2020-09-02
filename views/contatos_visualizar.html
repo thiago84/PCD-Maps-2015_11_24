@@ -1,0 +1,19 @@
+
+<div class="row">
+    <h2 class="header">Contatos</h2>
+    
+    <ul class="collection">
+        <li class="collection-item" ng-repeat="contato in contatos">
+            <p class="collections-title">{{contato.nome}}</p>
+            <p class="collections-content" ng-show="{{contato.telefone}}">
+                Telefone: <a ng-href="tel:{{contato.telefone}}">{{contato.telefone}}</a>
+            </p>
+            <p class="collections-content" ng-show="{{contato.email}}">
+                Email: <a ng-href="mailto:{{contato.email}}">{{contato.email}}</a>
+            </p>
+            <p class="collections-content" ng-show="{{contato.site}}">
+                Site: <a ng-href="{{contato.site}}">{{contato.site}}</a>
+            </p>
+        </li>
+    </ul>
+</div>

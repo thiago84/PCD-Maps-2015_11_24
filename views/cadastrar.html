@@ -1,0 +1,34 @@
+
+<div class="row">
+    <form class="col s12 m8 offset-m2 l6 offset-l3 center" ng-submit="cadastrar()" name="formCadastrar">
+        <div class="card" style="margin-top: 40px">
+            <div class="card-content">
+                <span class="card-title grey-text text-darken-4">Cadastrar</span>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="nome" type="text" class="validate" required ng-model="usuario.nome" />
+                        <label for="nome">Nome</label>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="email" class="validate" required ng-model="usuario.email" />
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="senha" type="password" class="validate" required ng-model="usuario.senha" />
+                        <label for="senha">Senha</label>
+                    </div>
+                </div>
+            </div>
+            <div class="card-action">
+                <button class="btn waves-effect waves-light" type="submit">Cadastrar</button>
+            </div>
+        </div>
+    </form>
+</div>
